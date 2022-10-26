@@ -44,16 +44,16 @@ def binary_search (array, element, left, right):
     if element <= array [left]:
         return '[' + str (left) + '] перед значением ' + str (array [left])
    
-    # если число непосредственно следующее за серединным
+    # число равно серединному
     if array [middle] == element: 
         return '[' + str (middle + 1) + '] между значениями ' + str (array [middle]) + ' и ' + str (array [middle + 1]) 
     
-    # если число меньше серединного
+    # число меньше серединного
     elif element < array [middle]: 
         # рекурсивно ищем в левой половине
         return binary_search (array, element, left, middle-1)
     
-    # если число больше серединного
+    # число больше серединного
     elif element > array [middle]:
         # ищем в правой
         return binary_search (array, element, middle+1, right)
@@ -87,7 +87,7 @@ while not (num or num == 0):
   
 print ()
 
-### поиск позиции введенного числа в списке
+### установление гипотетической позиции нового числа в списке
 pos = binary_search (numbers, num, 0, len (numbers)-1)
 
 print (' Это число займёт в списке позицию с индексом', pos)
